@@ -130,25 +130,23 @@ const HomePage: React.FC = () => {
         </div>
       </section>
 
+import TestimonialCarousel from '@/components/ui/TestimonialCarousel'; // Adjusted import path
+
+// Mock data for HomePage testimonials (can be same as default in carousel or specific)
+// For this integration, we'll let the carousel use its default or accept props if we define them here.
+// const homePageTestimonials: TestimonialItem[] = [ ... ];
+
       {/* Testimonials Section */}
       <section className="py-16 md:py-24 bg-slate-100">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 md:mb-16 text-slate-700">
             Lo Que Dicen Nuestros Clientes
           </h2>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {[
-              { quote: "Excelente servicio y atención. El polarizado quedó perfecto y 100% legal. ¡Recomendadísimos!", name: "Carlos M.", photo: "https://via.placeholder.com/100x100/A5B4FC/FFFFFF?text=CM" },
-              { quote: "La mejor asesoría sobre el tipo de polarizado que necesitaba. Muy profesionales y transparentes con los precios.", name: "Laura P.", photo: "https://via.placeholder.com/100x100/818CF8/FFFFFF?text=LP" },
-              { quote: "Calidad insuperable. Mi auto luce increíble y la protección solar es notoria. Volveré sin duda.", name: "Javier R.", photo: "https://via.placeholder.com/100x100/6366F1/FFFFFF?text=JR" },
-            ].map((testimonial, index) => (
-              <div key={index} className="bg-white p-8 rounded-xl shadow-lg flex flex-col items-center text-center">
-                <img src={testimonial.photo} alt={testimonial.name} className="w-20 h-20 rounded-full mb-4 border-2 border-teal-500"/>
-                <p className="text-slate-600 italic mb-4">"{testimonial.quote}"</p>
-                <p className="font-semibold text-teal-500">- {testimonial.name}</p>
-              </div>
-            ))}
-          </div>
+          {/* Integrate TestimonialCarousel */}
+          {/* If we want to use specific testimonials for the homepage, pass them: */}
+          {/* <TestimonialCarousel testimonials={homePageTestimonials} /> */}
+          {/* Otherwise, the carousel will use its own defaultMockTestimonials */}
+          <TestimonialCarousel />
         </div>
       </section>
 
